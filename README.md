@@ -25,3 +25,22 @@ Check out the [Course's Source Code](https://github.com/wesbos/es6.io)
     - [const is not about immutability where you can change the properties.](https://mathiasbynens.be/notes/es6-const)
 
 ### Module 2: Function Improvements: Arrows and Default Arguments
+- 3 main benefits:
+  - concise
+  - Implicit Returns -- easy for one-liners
+  - don't rebind the value of `this` inside another function (click handlers)
+- Arrow functions are anonymous functions and so don't leave a very good stack trace. Put them in a variable.
+
+- parentheses around the object literal so that the arrow function knows it's an object and not a a function block.
+
+  `const win = winners.map((winner, i) => ({name: winner, race, place: i + 1}));`
+
+- big takeaway here is that we can use an arrow function for things inside of a normal function and it's going to inherit the value of this.
+- order matters so if specific arguments are not passed it will return undefined
+- if you want to skip passing a custom argument when defaults are present, pass undefined and will fall back to default
+
+  - don't use `() =>` when:
+    - need arguments object
+    - need `this`
+
+### Module 3: Template Strings

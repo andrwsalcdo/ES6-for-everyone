@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+  button {font-size: 100px; }
+  .on {background: #ffc600;}
+  </style>
+
+  <button type="button" id="pushy">Push me</button>
+  <script>
+
+  //when you really need `this`
+  const button = document.querySelector('#pushy');
+  button.addEventListener('click', function() {
+    console.log(this);
+    this.classList.toggle('on');
+  });
+
+  //when you need a method to bind to an object
+  const person = {
+    points: 23,
+    score: function() {
+      this.points++;
+    }
+  }
+
+  //when you need to add a prototype method
+  class Car {
+    constructor(make, color) {
+      this.make = make;
+      this.colour = colour;
+    }
+  }
+
+  const beemer = new Car('BMW', 'blue');
+  const subie = new Car('Subaru', 'white');
+
+  Car.prototype.summarize = function() {
+    return `This car is a ${this.make} in the colour ${this.colour}`;
+  };
+
+  //when you need arguements object
+  const orderChildren = function() {
+    console.log(arguments);
+    const children = Array.from(arguments);
+    return children.map((child, i) => {
+        return `${child} was child #${i + 1}`;
+    })
+}
+
+
+
+  </script>
+</body>
+</html>

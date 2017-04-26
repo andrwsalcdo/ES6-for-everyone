@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Arrow functions -> -> </title>
+</head>
+<body>
+<script>
+   const names = ['wes', 'kait', 'lux'];
+
+   const fullNames = names.map(function(name) {
+     return `${name} bos`;
+   });
+
+  const fullNames2 = names.map((name) => {
+    return `${name} bos`;
+  });
+
+  const fullNames3 = names.map(name => {
+    return `${name} bos`;
+  });
+
+  //implicit: no use of "return"
+  const fullNames4 = names.map(name => `${name} bos`);
+
+  //no arguements
+  const fullNames5 = names.map(() => `cool bos`);
+
+
+  console.log(fullNames5);
+
+
+
+</script>
+</body>
+</html>
