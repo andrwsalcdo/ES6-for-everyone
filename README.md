@@ -44,3 +44,15 @@ Check out the [Course's Source Code](https://github.com/wesbos/es6.io)
     - need `this`
 
 ### Module 3: Template Strings
+- template literals: back ticks!   ``My dog ${name} is cute.`` ${name} is used to access a variable, function, run javascript within the string.
+
+- unordered list, use the map function to fill in words from an array. use the `join` function to make sure words don't include the commas from the array. this is useful when you want to loop over and get a list item as well.
+use a ternary operator for conditional if statements with template strings ` ${song.featuring ? ``(Featuring ${song.featuring})`` : ''}`
+
+- if you have a string, you pass in the regular string that you want, and then you get all the pieces.
+
+- using a tag template to add abbreviation tags to values. you can use reduce function. loops over each value and builds the string as it goes all.
+
+- use tag templates to sanitize incoming html to prevent nasty js.
+
+### Module 4: Additional String Improvements

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  const person = {
+    name: 'Wes',
+    job: 'Web Developer',
+    city: 'Hamilton',
+    bio: 'Wes is a really cool guy that loves to teach web development!'
+  }
+
+  const markup =  `
+    <div class="person">
+      <h2>${person.name}
+        <span class="job">${person.job}</span>
+      </h2>
+      <p class="location">${person.city}</p>
+      <p class="bio">${person.bio}</p>
+    </div>
+  `;
+
+  console.log(markup);
+  document.body.innerHTML = markup;
+
+
+
+  const dogs = [
+    {name: 'snickers', age: 2 },
+    {name: 'hugo', age: 8},
+    {name: 'sunny', age: 1}
+  ];
+
+  const markup2 = `
+<ul class="dogs">
+	${dogs.map(dog =>
+    `<li>${dog.name}
+      is
+      ${dog.age * 7}
+      </li>`
+    ).join('')}
+</ul>
+`;
+
+  document.body.innerHTML = markup2;
+
+  const song = {
+    name: 'Dying to live',
+    artist: 'Tupac',
+    featuring: 'Biggie Smalls'
+};
+
+  const markup3 = `
+    <div class="song">
+      <p>
+        ${song.name} - ${song.artist}
+        ${song.featuring ? `(Featuring ${song.featuring})` : '' }
+      </p>
+    </div>
+  `;
+
+  document.body.innerHTML = markup3;
+
+  const beer = {
+    name: 'Belgian Wit',
+    brewery: `Steam Whistle Brewery`,
+    keywords: ['pale', 'cloudy', 'spiced', 'crisp']
+};
+
+function renderKeywords(keywords) {
+  return `<ul>
+    ${keywords.map(keyword =>
+      `<li>${keyword}</li>`).
+      join('')}
+  </ul>
+  `;
+}
+
+const markup4 = `
+<div class="beer">
+    <h2>${beer.name}</h2>
+    <p class="brewery">${beer.brewery}</p>
+    ${renderKeywords(beer.keywords)}
+</div>
+`;
+
+document.body.innerHTML = markup4;
+
+</script>
+</body>
+</html>
