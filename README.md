@@ -56,3 +56,6 @@ use a ternary operator for conditional if statements with template strings ` ${s
 - use tag templates to sanitize incoming html to prevent nasty js.
 
 ### Module 4: Additional String Improvements
+- .startsWith(), .endsWith(), .includes(), .repeat()
+
+### Module 5: Destructuring 
