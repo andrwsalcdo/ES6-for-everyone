@@ -7,6 +7,63 @@
   <title>Document</title>
 </head>
 <body>
+  <p>hi i'm p 01</p>
+  <p>hi i'm p 02</p>
+  <p>hi i'm p 03</p>
+  <p>hi i'm p 04</p>
+  <p>hi i'm p 05</p>
+  <p>hi i'm p 06</p>
+  <p>hi i'm p 07</p>
+  <p>hi i'm p 08</p>
+  <p>hi i'm p 09</p>
+  <p>hi i'm p 10</p>
+<script>
+const cuts = ['Chuck', 'Brisket', 'Shank', 'Short Rib'];
 
+for (const cut of cuts) {
+  console.log(cut);
+}
+
+//returns the value and the index[i] of the value in the array
+//cuts.entries() to bring an iterator
+for (const [i, cut] of cuts.entries()) {
+    console.log(`${cut} is the ${i + 1} item`);
+}
+
+
+//iterate over the args object
+
+function addUpNumbers() {
+  //this is an object. typically you could convert this to an array and use reduce
+  //so it would be easier to iterate over with the for of loop.
+  //however, we will use for of loop without converting to an array
+  let total = 0;
+  for (const num of arguments){
+    total += num;
+  }
+  console.log(total);
+  return total;
+}
+
+addUpNumbers(10,23,52,34,12,13,123);
+
+// for of iterate over a string
+const name = 'Wes Bos';
+for (const char of name){
+    console.log(char);
+}
+
+//for of with NodeLists and HTML Collections
+//looping without having to convert to a true array.
+//
+const ps = document.querySelectorAll('p');
+for (const paragraph of ps) {
+    paragraph.addEventListener('click', function() {
+        console.log(this.textContent);
+    })
+}
+
+
+</script>
 </body>
 </html>

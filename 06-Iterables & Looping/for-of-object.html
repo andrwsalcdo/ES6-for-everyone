@@ -7,6 +7,31 @@
   <title>Document</title>
 </head>
 <body>
+<script>
+  const apple = {
+    color: 'Red',
+    size: 'Medium',
+    weight: 50,
+    sugar: 10,
+  };
+  //this won't work
+  for (const prop of apple){
+    console.log(prop);
+  }
+  //not the cleanest solution, but possible.
+  //Object.keys will return an array of all the keys, not values.
+  //use keys to get the values in the array. 
+  for (const prop of Object.keys(apple)) {
+    const value = apple[prop];
+    console.log(value, prop);
+}
 
+  //until Object.entries is available in 2017,
+  //use this "for in loop"
+  for (const prop in apple){
+    const value = apple[prop];
+    console.log(value, prop);
+}
+</script>
 </body>
 </html>
