@@ -7,6 +7,69 @@
   <title>Document</title>
 </head>
 <body>
+<script>
+const posts = [
+    {
+      "code":"DFKJdodfi",
+      "caption":"Dunno Dog'",
+      "likes":42,
+      "id":"328943249723",
+      "display_src":"https://i.ytimg.com/vi/uFTcXaTezyA/hqdefault.jpg"
+    },
+    {
+      "code":"BAIDfidslkaf",
+      "caption":"Doggin' Around",
+      "likes":40,
+      "id":"2190828475324",
+      "display_src":"https://i.ytimg.com/vi/uFTcXaTezyA/hqdefault.jpg"
+    },
+    {
+      "code":"BAAJqdslkaf",
+      "caption":"Strait Doggin'",
+      "likes":50,
+      "id":"2190823079324",
+      "display_src":"https://i.ytimg.com/vi/uFTcXaTezyA/hqdefault.jpg"
+    }
+]
 
+//now you have the entire post, so you can grab the other values.
+const post = posts.find(post => {
+    console.log(post.code)
+    if(post.code === 'BAAJqdslkaf') {
+        return true
+    }
+    return false;
+})
+
+//another solution
+
+const code = 'BAAJqdslkaf';
+const post = posts.find(post => post.code === code);
+console.log(post);
+
+//if you want to find multiple things, you can you .filter
+//that would you give you an array of objects.
+
+
+//findIndex()
+// let's say we want to delete one of our posts, and we only have the `code`
+//we need to find where it is.
+
+const code = 'BAAJqdslkaf';
+const postIndex = posts.findIndex((post) => {
+	if(post.code === code) {
+		return true;
+	}
+	return false;
+});
+console.log(postIndex);
+
+//refactored solutuion  
+const code = 'BAAJqdslkaf';
+const postIndex = posts.findIndex(post => post.code === code);
+console.log(postIndex);
+
+
+</script>
 </body>
 </html>

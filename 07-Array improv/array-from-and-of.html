@@ -7,6 +7,46 @@
   <title>Document</title>
 </head>
 <body>
+  <div class="people">
+    <p>Wes</p>
+    <p>Kait</p>
+    <p>Snickers</p>
+</div>
+<script>
+  const people = document.querySelector('.people p');
+  //this converts the array-ish people, really a node list, into an array.
+  //it was array-ish, because it has length and some methods.
+  const peopleArray = Array.from(people);
+  const names = peopleArray.map(person => person.textContent);
 
+
+  //you could also do this
+  const people = Array.from(document.querySelector('.people p'));
+
+  //another solution
+  //array.from() takes a 2nd argument which is a .map function, allows
+  //modifying data as creating an array.
+  const people = document.querySelectorAll('.people p');
+  const peopleArray = Array.from(people, person => person.textContent);
+  console.log(peopleArray);
+
+
+
+  //converting arguments objects to an Array
+
+  function sumAll() {
+    const nums = Array.from(arguments);
+    return nums.reduce((prev,next) => prev + next, 0);
+}
+sumAll(2,34,23,234,234,234234,234234,2342);
+
+
+//Array.of()
+
+//creates an array from every single argument you pass it.
+const ages =  Array.of(12,4,23,62,34);
+
+
+</script>
 </body>
 </html>

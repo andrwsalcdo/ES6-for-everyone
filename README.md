@@ -121,3 +121,25 @@ for (const prop in apple){
 }
 ```
 ### Module 7: An Array of Array Improvements
+- `Array.from` will turn something into true array. use case: working with DOM elements. `Array.of` creates an array from every single argument you pass it.
+```javascript
+  const people = Array.from(document.querySelector('.people p'));
+  const ages =  Array.of(12,4,23,62,34);
+```
+
+- `.find` and `.findIndex`. common use case: data comes back from an API.
+```javascript
+const code = 'BAAJqdslkaf';
+const post = posts.find(post => post.code === code);
+console.log(post);
+```
+
+- `.some()` and `.every()` will check the data in an array to check if some of the items meet what you're looking for or all of the items meet what you're looking for.
+```javascript
+const ages = [32, 15, 19, 12];
+//any adults present?
+const adultPresent = ages.some(age => age >= 18); //true
+//all ages > 19, in order to drink?
+const allOldEnough = ages.every(age => age >= 19); //false
+```
+### Module 8: ...Spread and ...Rest 
