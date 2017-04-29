@@ -58,4 +58,18 @@ use a ternary operator for conditional if statements with template strings ` ${s
 ### Module 4: Additional String Improvements
 - .startsWith(), .endsWith(), .includes(), .repeat()
 
-### Module 5: Destructuring 
+### Module 5: Destructuring
+-  expression that allows us to extract data from arrays, objects, maps and sets into their own variable. It allows us to extract properties from an object or items from an array, multiple at a time.
+`  const {first, last, twitter} = person; `
+`const { twitter:tweet, facebook: fb } = wes.links.social;`
+
+- array destructuring: use `[square brackets]`
+`const [name, ID, website] = details;`
+
+- swapping variables. `let inRing = 'Hulk Hogan';
+let onSide = 'The Rock';   [inRing, onSide] = [onSide, inRing];`
+
+-  return multiple values as well as pick and choose the pieces that you want returned from a function. `const { AUD, USD } = convertCurrency(100);`
+`function tipCalc({ total = 100, tip = 0.15, tax = 0.13 } ={})`
+
+### Module 6: Iterables & Looping

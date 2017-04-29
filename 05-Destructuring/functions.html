@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+function convertCurrency(amount) {
+ const converted = {
+   USD: amount * 0.76,
+   GPB: amount * 0.53,
+   AUD: amount * 1.01,
+   MEX: amount * 13.30
+ };
+ return converted;
+}
+//return multiple values. pick and choose which values.
+//order of values doesn't matter.
+const { MEX, USD, AUD, GPB} = convertCurrency(100);
+
+//wrap 3 args in {}, pass in the object it will destructure them into 3 variables
+//if tipCalc(); is run, then it will be undefined.
+  //if no {} is pass, then the default arg = {}) so the variables get passed through.
+  
+function tipCalc({ total = 100, tip = 0.15, tax = 0.13 } ={}) {
+ return total + (tip * total) + (tax * total);
+}
+
+const bill = tipCalc({ tip: 0.20, total: 200 });
+console.log(bill);
+
+
+</script>
+</body>
+</html>
