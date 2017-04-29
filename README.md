@@ -67,11 +67,13 @@ use a ternary operator for conditional if statements with template strings
 - use tag templates to sanitize incoming html to prevent nasty js.
 
 ### Module 4: Additional String Improvements
-- ```javascript
+
+```javascript
 .startsWith(), .endsWith(), .includes(), .repeat()
 ```
 
 ### Module 5: Destructuring
+
 -  expression that allows us to extract data from arrays, objects, maps and sets into their own variable. It allows us to extract properties from an object or items from an array, multiple at a time.
 ```javascript
  const {first, last, twitter} = person;
@@ -96,7 +98,8 @@ function tipCalc({ total = 100, tip = 0.15, tax = 0.13 } ={})
 ```
 
 ### Module 6: Iterables & Looping
-- ```javascript
+
+```javascript
 for ( const index of cuts){  
     console.log(cuts);
 }
@@ -104,7 +107,7 @@ for ( const index of cuts){
 
 - `for of loop` should iterate over an array, however it's possible as long as they're an iterable, like a DOM collection, argument, string, map, or set.
 
-- ```javascript
+```javascript
 for (const paragraph of ps) {
     paragraph.addEventListener('click', function() {
         console.log(this.textContent);
@@ -142,4 +145,4 @@ const adultPresent = ages.some(age => age >= 18); //true
 //all ages > 19, in order to drink?
 const allOldEnough = ages.every(age => age >= 19); //false
 ```
-### Module 8: ...Spread and ...Rest 
+### Module 8: ...Spread and ...Rest
