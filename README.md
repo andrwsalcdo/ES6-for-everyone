@@ -146,3 +146,5 @@ const adultPresent = ages.some(age => age >= 18); //true
 const allOldEnough = ages.every(age => age >= 19); //false
 ```
 ### Module 8: ...Spread and ...Rest
+
+-  spread will take every single item from an iterable and apply it into the new array.

@@ -7,6 +7,16 @@
   <title>Document</title>
 </head>
 <body>
+<script>
+  const featured = ['Deep Dish', 'Pepperoni', 'Hawaiian'];
+  const specialty = ['Meatzza', 'Spicy Mama', 'Margherita'];
 
+  //list all the pizzas in an array. with 'veg' in the middle of the values
+  const pizzas = [...featured, 'veg', ...specialty];
+
+  const fridayPizzas = [...pizzas];
+  fridayPizzas[0] = 'Canadian';
+  
+</script>
 </body>
 </html>
