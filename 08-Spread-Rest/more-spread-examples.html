@@ -7,6 +7,46 @@
   <title>Document</title>
 </head>
 <body>
+  <div class="people">
+    <p>Wes</p>
+    <p>Kait</p>
+    <p>Randy</p>
+  </div>
+<script>
+  // const people = Array.from(document.querySelectorAll('.people p'));
+  // console.log(people);
+  // const names = people.map();
 
+  //alternative solution to above with SPREAD
+  const people = [...document.querySelectorAll('.people p')];
+  console.log(people);
+  const names = people.map();
+
+  //another example
+  const deepDish = {
+    pizzaName: 'Deep Dish',
+    size: 'Medium',
+    ingredients: ['Marinara', 'Italian Sausage', 'Dough', 'Cheese']
+};
+
+  const shoppingList = ['Milk', 'Flour', ...deepDish.ingredients];
+  console.log(shoppingList);
+
+  //another example very common in react, redux
+  const comments = [
+   { id: 123456, text: 'I love your dog!' },
+   { id: 789101, text: 'Cuuuuuute!' },
+   { id: 234567, text: 'You are so dumb' },
+   { id: 891011, text: 'Nice work on this Wes!' },
+  ];
+
+  const id = 234567;
+  const commentIndex = comments.findIndex(comment => comment.id === id);
+  console.log(commentIndex);
+
+  const newComments = [...comments.slice(0,commentIndex), ...comments.slice(commentIndex + 1)];
+  //this.setState({ comments: newComments })  what you would do afterwards in react
+
+</script>
 </body>
 </html>

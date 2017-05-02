@@ -99,14 +99,7 @@ function tipCalc({ total = 100, tip = 0.15, tax = 0.13 } ={})
 
 ### Module 6: Iterables & Looping
 
-```javascript
-for ( const index of cuts){  
-    console.log(cuts);
-}
-```
-
 - `for of loop` should iterate over an array, however it's possible as long as they're an iterable, like a DOM collection, argument, string, map, or set.
-
 ```javascript
 for (const paragraph of ps) {
     paragraph.addEventListener('click', function() {
@@ -123,6 +116,7 @@ for (const prop in apple){
     console.log(value, prop);
 }
 ```
+
 ### Module 7: An Array of Array Improvements
 - `Array.from` will turn something into true array. use case: working with DOM elements. `Array.of` creates an array from every single argument you pass it.
 ```javascript
@@ -145,6 +139,37 @@ const adultPresent = ages.some(age => age >= 18); //true
 //all ages > 19, in order to drink?
 const allOldEnough = ages.every(age => age >= 19); //false
 ```
+
 ### Module 8: ...Spread and ...Rest
 
 -  spread will take every single item from an iterable and apply it into the new array.
+```javascript
+const people = [...document.querySelectorAll('.people p')];
+console.log(people);
+const names = people.map((person) => person.textContent);
+```
+
+- After slicing an object in an array, use Spread to recombine the parts into the same array.
+```javascript
+const newComments = [...comments.slice(0, commentIndex),...comments.slice(commentIndex + 1)];
+```
+
+- very handy. Use Spread to pass in multiple arguments for a function.
+```javascript
+const name = ['Wes', 'Bos'];
+function sayHi(first, last) {
+  alert (`Hey there ${first} ${last}`)
+}
+sayHI(...name);
+```
+
+- Rest Param 2 good use cases: first in a function, second in a destructuring situation.
+```javascript
+function convertCurrency(rate, ...amounts){
+   console.log(rate, amounts);
+   return amounts.map(amount => amount * rate);
+}
+convertCurrency(1.56, 10, 23, 52, 1, 56);
+```
+
+### Module 9: Object Literal Upgrades

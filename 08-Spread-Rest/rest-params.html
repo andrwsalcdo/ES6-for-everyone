@@ -7,6 +7,24 @@
   <title>Document</title>
 </head>
 <body>
+<script>
+  function convertCurrecnty(rate, ...amounts){
+     console.log(rate, amounts);
+     return amounts.map(amount => amount * rate);
+  }
 
+  convertCurrecnty(1.56, 10, 23, 52, 1, 56);
+  //console.log reveals 1.56 is rate, amounts is an array of those values
+  //handy trick. nice.
+  //Returns -> an array of the currency values
+
+
+  const runner = ['Wes Bos', 123, 5.5, 5, 3, 6, 35];
+  const [name, id, ...runs] = runner;
+   console.log(name, id, runs);
+   //console.log -> wes bos, 123, [5.5, 5, 3, 6, 35]
+   //so the Rest param makes the other values into an array for 'runs'
+   //akin to the first example with 'amounts'
+</script>
 </body>
 </html>

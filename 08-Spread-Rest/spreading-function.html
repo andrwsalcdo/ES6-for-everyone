@@ -7,6 +7,22 @@
   <title>Document</title>
 </head>
 <body>
+<script>
+  const inventors = ['Einstein', 'Newton', 'Galileo'];
+  const newInventors = ['Musk', 'Jobs'];
+  inventors.push(...newInventors);
+//Spreads every item as an argument for a function.
+//this results in the items of newInventors to be tacked on the end
+//of 'investors'
+//console.log(inventors); ->['Einstein', 'newton', 'galileo', 'musk', 'jobs']
 
+  const name = ['Wes', 'Bos'];
+  function sayHi(first, last) {
+    alert (`Hey there ${first} ${last}`)
+  }
+
+  sayHI(...name);
+//Spread would take every argument in that array and pass it into the fn()
+</script>
 </body>
 </html>
