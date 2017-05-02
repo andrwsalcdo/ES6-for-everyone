@@ -196,3 +196,15 @@ const values = ['medium', 'red', 100]
 ```
 
 ### Module 10: Promises
+
+1. promises are often used when you're fetching a JSON API and doing some AJAX work. `.then` `.catch`
+2. `fetch` used to be able to fetch in this JSON API. It's not a library, it's actually something built right into the browser. It returns a promise. It's very similar to  `$.getJSON' or '$.ajax'.
+3. Think of a Promise as an IOU. something that will happen in the future but not immediately.
+
+```javascript
+const p = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    reject(Error('Err wes isn\'t cool'));
+  }, 1000);
+}); //how to create a promise 
+```

@@ -7,6 +7,36 @@
   <title>Document</title>
 </head>
 <body>
+<script>
+  //fetch similar to $.getJson or $.ajax, but built into the browser.
+  //returns a promise. no need to load an external library.
+  // console.log('Going to fetch the latest posts from Wes\' Blog');
+  // const posts = fetch('http://wesbos.com/wp-json/wp/v2/posts');
+  // console.log('Done!');
+  // console.log(posts);
 
+
+// const postPromise = fetch('http://wesbos.com/wp-json/wp/v2/posts');
+
+//`then` function will only run when the data comes back from the promise.
+//think of a promise as a IOU.
+// postPromise.then(data => {
+//     console.log(data); //returns raw data, but not expected JSON data.
+// })
+
+
+
+const postPromise = fetch('http://wesbos.com/wp-json/wp/v2/posts');
+
+postPromise
+  .then(data => data.json())
+  .then(data => { console.log(data) })
+  .catch((err) => {
+    console.error(err);
+  })
+//remember `.then` will only fire when the Promise comes back!
+//if error, then `.catch.` will run.
+
+</script>
 </body>
 </html>
