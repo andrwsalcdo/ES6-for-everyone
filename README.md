@@ -173,3 +173,26 @@ convertCurrency(1.56, 10, 23, 52, 1, 56);
 ```
 
 ### Module 9: Object Literal Upgrades
+
+- Deconstructing of variables into key and value.
+- Deconstructing named functions into key and value
+- Computed property names. ability to dynamically create keys.
+- Generating keys on instantiation
+
+```javascript
+const first = 'snickers';
+const last = 'bos';
+const age = 2;
+const breed = 'King Charles Cav';
+  const dog = { first, last, age, breed, };
+
+const keys = ['size', 'color', 'weight']
+const values = ['medium', 'red', 100]
+  const shirt = {
+    [keys.shift()]: values.shift(),
+    [keys.shift()]: values.shift(),
+    [keys.shift()]: values.shift()
+  }
+```
+
+### Module 10: Promises

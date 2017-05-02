@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+//Deconstructing of variables into key and value
+  const first = 'snickers';
+  const last = 'bos';
+  const age = 2;
+  const breed = 'King Charles Cav';
+
+  //if the object you create has properties with same name as variables,
+  //then, you only need to write it once within the object. like so,
+
+  const dog = { first, last, age, breed, };
+
+//Deconstructing named functions into key and value
+
+const modal = {
+    create: function() {
+
+    },
+    open: function() {
+
+    },
+    close: function() {
+
+    }
+}
+
+//this modal above is the same as the one below
+
+const modal = {
+   create() {
+
+   },
+   open() {
+
+   },
+   close() {
+
+   }
+}
+
+//Computed property names
+//ability to dynamically create keys.
+
+function invertColor(color) {
+    return '#' + ("000000" + (0xFFFFFF ^ parseInt(color.substring(1), 16)).toString(16)).slice(-6)
+}
+
+const key = 'pocketColor';
+const value = '#ffc600';
+
+const tshirt = {
+    [key]: value,
+    [`${key}Opposite`]: invertColor(value)
+}
+
+//generating keys on instantiation
+
+const keys = ['size', 'color', 'weight']
+const values = ['medium', 'red', 100]
+
+const shirt = {
+    [keys.shift()]: values.shift(),
+    [keys.shift()]: values.shift(),
+    [keys.shift()]: values.shift()
+}
+//each key value pair shifts through the array generating 
+//an object that has the three key value pairs hinted at in our variables.
+
+</script>
+</body>
+</html>
