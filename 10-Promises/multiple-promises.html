@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+const weather = new Promise((resolve) => {
+  setTimeout(() => {
+      resolve({temp: 29, conditions: 'Sunny with Clouds'});
+  }, 2000);
+});
+
+const tweets = new Promise((resolve) => {
+  setTimeout(() => {
+      resolve(['I like cake', 'BBQ is good too!']);
+  }, 500);
+});
+
+//you want to get this data back all at once. because the data isn't
+//dependent on each other.
+//Don't need to chain `.then` together, we can say  `Promise.all`
+//`promise.all` pass it an array of promises and you call `.then` against that
+
+Promise
+  //formatting .all & .then on separate lines helps for more readable code
+  .all([weather, tweets])
+  .then(response => {
+    const [weatherInfo, tweetsInfo] = responses;
+    console.log(weatherInfo, tweetsInfo)
+  });
+
+
+const postsPromise = fetch('http://wesbos.com/wp-json/wp/v2/posts');
+const streetCarsPromise = fetch('http://data.ratp.fr/api/datasets/1.0/search/?q=paris');
+
+Promise
+  .all([postsPromise, streetCarsPromise])
+  .then(responses => {
+    console.log(responses);
+    return Promise.all(responses.map(res => res.json()))
+  })
+  .then(response => {
+    console.log(responses); 
+  })
+
+</script>
+</body>
+</html>

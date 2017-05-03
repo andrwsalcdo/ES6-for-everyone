@@ -206,5 +206,24 @@ const p = new Promise((resolve, reject) => {
   setTimeout(() => {
     reject(Error('Err wes isn\'t cool'));
   }, 1000);
-}); //how to create a promise 
+}); //how to create a promise
 ```
+
+-  Useful case for Promise is when you need some sort of flow control. When you are querying a database on the back end, maybe something like Node.js.
+- If you return a `Promise` inside of a `.then`, we're allowed to chain another `.then` on to the next line.
+
+- Take array of responses by each one and call `.json()` on it with `.map`. This returns a second promise, which we can call `.then` on, and that should give us some real data.
+```javascript
+const postsPromise = fetch('http://wesbos.com/wp-json/wp/v2/posts');
+const streetCarsPromise =fetch('http://data.ratp.fr/api/datasets/1.0/search/?q=paris');
+Promise.all([postsPromise, streetCarsPromise])
+      .then(responses =>  {
+        //take responses and call .json on each one.
+          return Promise.all(responses.map(res => res.json()))
+      })
+      .then(responses => {
+          console.log(responses);
+      })
+```
+
+### Module 11: Symbols
