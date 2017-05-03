@@ -227,3 +227,22 @@ Promise.all([postsPromise, streetCarsPromise])
 ```
 
 ### Module 11: Symbols
+
+- 7th primitive to JS.
+- Are unique identifiers that we can use to help us avoid naming collisions.
+```javascript
+const classRoom = {
+    [Symbol('Mark')]: { grade: 50, gender: 'male' },
+    [Symbol('olivia')]: { grade: 80, gender: 'female' },
+    [Symbol('olivia')]: { grade: 80, gender: 'female' }
+}
+```
+
+- Aren't Enumerable. Can't loop over them. So, they can be used to store private data.
+
+- How to access data dynamically with symbols?
+```javascript
+const syms = Object.getOwnPropertySymbols(classRoom);
+const data = syms.map(sym => classRoom[sym]);
+console.log(data);
+```

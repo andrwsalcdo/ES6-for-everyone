@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+const wes = Symbol('Wes');
+const person = Symbol('Wes');
+
+//'symbol' is a unique identifier.
+//imagine it link a crazy long url id or something close.
+//Absolutely unique! they don't pass "===" or "==".
+
+
+const classRoom = {
+    [Symbol('Mark')]: { grade: 50, gender: 'male' },
+    [Symbol('olivia')]: { grade: 80, gender: 'female' },
+    [Symbol('olivia')]: { grade: 80, gender: 'female' }
+}
+
+//The gotcha with Symbols is that they're not Enumerable,
+// which means we can not loop over them
+//so, For this reason, Symbols can be used
+//to store private data in an object.
+
+$ for (person in classRoom) {
+   console.log(person);
+}
+=> undefined
+
+//classRoom data clearly isn't private, so how to access it dynamically?
+
+const syms = Object.getOwnPropertySymbols(classRoom);
+const data = syms.map(sym => classRoom[sym]);
+console.log(data);
+//now you can access the data.
+</script>
+</body>
+</html>
