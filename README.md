@@ -246,3 +246,21 @@ const syms = Object.getOwnPropertySymbols(classRoom);
 const data = syms.map(sym => classRoom[sym]);
 console.log(data);
 ```
+
+### Module 12: Code Quality with ESLint
+
+- ESlint is great. open source. Airbnb style guide as a guiding resource.
+
+- Possible to enable/disable eslint on specific files and lines.
+```javascript
+if (!Array.prototype.includes) {
+  /* eslint-disable no-extend-native  */
+  Array.prototype.includes = function(searchElement /*, fromIndex*/) {
+  /* eslint-enable no-extend-native  */
+    'use strict';
+    if (this == null) {
+      throw new TypeError('Array.prototype.includes called on null or undefined');
+    }
+```
+
+### Module 13: JS Modules & Webpack 2 Tooling Setup
