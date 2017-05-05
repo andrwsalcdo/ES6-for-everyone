@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+
+  <title>yoshi parallax</title>
+
+  <link rel="stylesheet" href="../../css/flickity.css" />
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  background: black;
+  font-family: sans-serif;
+}
+
+/* ---- parallax ---- */
+
+.sprite {
+  background-image: url('sprite-2x.png');
+  background-repeat: no-repeat;
+}
+
+.parallax {
+  width: 512px;
+  position: relative;
+  overflow-x: hidden;
+  padding-bottom: 40px;
+  background-position: 0 -1344px;
+  margin: 40px auto 20px;
+}
+
+.parallax__carousel {
+
+}
+
+.parallax__carousel__cell {
+  width: 512px;
+  height: 448px;
+}
+
+.parallax__carousel__cell:nth-child(1) { background-position: -0px -448px; }
+.parallax__carousel__cell:nth-child(2) { background-position: -512px -448px; }
+.parallax__carousel__cell:nth-child(3) { background-position: -1024px -448px; }
+.parallax__carousel__cell:nth-child(4) { background-position: -1536px -448px; }
+.parallax__carousel__cell:nth-child(5) { background-position: -2048px -448px; }
+
+.parallax__layer {
+  position: absolute;
+  height: 448px;
+  left: 0;
+  top: 0;
+}
+
+.parallax__layer--bg {
+  width: 2224px;
+}
+
+.parallax__layer--fg {
+  pointer-events: none;
+  width: 5200px;
+  background-position: 0 -896px;
+}
+
+.flickity-prev-next-button { z-index: 2; }
+
+.flickity-page-dots {
+/*  bottom: 10px;*/
+  z-index: 2;
+}
+
+.flickity-page-dots .dot {
+  background: white;
+}
+
+.tagline {
+  font-size: 20px;
+  text-align: center;
+  margin: 0 0 20px;
+}
+
+.tagline a {
+  color: #666;
+  text-decoration: none;
+}
+
+.tagline a:hover { color: #8C8; }
+
+/* ----  ---- */
+</style>
+
+</head>
+<body>
+
+<div class="parallax sprite">
+
+  <div class="parallax__layer parallax__layer--bg sprite"></div>
+
+  <div class="parallax__carousel">
+    <div class="parallax__carousel__cell sprite"></div>
+    <div class="parallax__carousel__cell sprite"></div>
+    <div class="parallax__carousel__cell sprite"></div>
+    <div class="parallax__carousel__cell sprite"></div>
+    <div class="parallax__carousel__cell sprite"></div>
+  </div>
+
+  <div class="parallax__layer parallax__layer--fg sprite"></div>
+
+</div>
+
+<p class="tagline"><a href="http://flickity.metafizzy.co">Made with Flickity</a></p>
+
+<script src="../../bower_components/get-size/get-size.js"></script>
+<script src="../../bower_components/desandro-matches-selector/matches-selector.js"></script>
+<script src="../../bower_components/ev-emitter/ev-emitter.js"></script>
+<script src="../../bower_components/unipointer/unipointer.js"></script>
+<script src="../../bower_components/unidragger/unidragger.js"></script>
+<script src="../../bower_components/tap-listener/tap-listener.js"></script>
+<script src="../../bower_components/fizzy-ui-utils/utils.js"></script>
+
+<script src="../../js/cell.js"></script>
+<script src="../../js/slide.js"></script>
+<script src="../../js/animate.js"></script>
+<script src="../../js/flickity.js"></script>
+<script src="../../js/drag.js"></script>
+<script src="../../js/prev-next-button.js"></script>
+<script src="../../js/page-dots.js"></script>
+<script src="../../js/player.js"></script>
+<script src="../../js/add-remove-cell.js"></script>
+<script src="../../js/lazyload.js"></script>
+
+<script>
+
+// -----  ----- //
+
+var paraBG = document.querySelector('.parallax__layer--bg');
+var paraFG = document.querySelector('.parallax__layer--fg');
+
+var paraFlkty = new Flickity( '.parallax__carousel', {
+
+});
+
+var cellRatio = 1;
+var bgRatio = 0.75;
+var fgRatio = 2;
+
+paraFlkty.on( 'scroll', function( progress ) {
+  paraBG.style.left = ( 0.5 - ( 0.5 + progress * 4 ) * cellRatio * bgRatio ) * 100 + '%';
+  paraFG.style.left = ( 0.5 - ( 0.5 + progress * 4 ) * cellRatio * fgRatio ) * 100 + '%';
+});
+
+paraFlkty.reposition();
+
+// -----  ----- //
+
+</script>
+
+</body>
+</html>

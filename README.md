@@ -264,3 +264,34 @@ if (!Array.prototype.includes) {
 ```
 
 ### Module 13: JS Modules & Webpack 2 Tooling Setup
+
+- Setup the build npm script in `package.json`:
+
+```json
+"build": "webpack --progress --watch"
+```
+
+- 2 types of export.
+  - default export: is main thing that module does.
+    - gets renamed as whatever you import it as.
+
+    ```javascript
+    const apiKey = 'abc123';
+    export default apiKey;
+    ```
+
+  - named export: used for methods, variables, and things you need to pluck off from that.
+    - have to import it as whatever it was exported as.
+
+    ```javascript
+    export const apiKey = 'abc123';
+    import { apiKey }from './src/config';
+    ```
+- you can rename variables while import/export them with the `as` keyword.
+
+  ```javascript
+  import { apiKey as key, url, sayHi } from './src/config';
+  export {age as old, dog}
+  ```
+
+### Module 14: ES6 Tooling git

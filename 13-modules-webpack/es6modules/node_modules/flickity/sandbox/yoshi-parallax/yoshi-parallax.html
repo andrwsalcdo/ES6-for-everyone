@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+
+  <title>yoshi parallax</title>
+
+  <link rel="stylesheet" href="../../css/flickity.css" />
+
+<style>
+* { box-sizing: border-box; }
+
+html { overflow-y: scroll; }
+
+/* ---- parallax ---- */
+
+.parallax {
+  width: 512px;
+  position: relative;
+  overflow-x: hidden;
+  padding-bottom: 40px;
+  background: url('bg-gradient-2x.png') top left repeat-x;
+}
+
+.parallax__carousel__cell {
+  background: hsla(0, 100%, 50%, 0.4);
+  height: 220px;
+  width: 50%;
+  margin: 40px 5%;
+}
+
+.parallax__layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.parallax__layer--bg {
+}
+
+.parallax__layer--fg {
+  pointer-events: none;
+  width: 200%;
+}
+
+.parallax__layer--fg img {
+  display: block;
+  position: absolute;
+}
+
+.parallax__layer--fg img:nth-child(1) { left: 0; }
+.parallax__layer--fg img:nth-child(2) { left: 100%; }
+.parallax__layer--fg img:nth-child(3) { left: 200%; }
+.parallax__layer--fg img:nth-child(4) { left: 300%; }
+.parallax__layer--fg img:nth-child(5) { left: 400%; }
+
+/* ----  ---- */
+</style>
+
+</head>
+<body>
+
+<div class="parallax">
+
+  <div class="parallax__layer parallax__layer--bg">
+    <img src="background-2x.png" />
+  </div>
+
+  <div class="parallax__carousel">
+    <img src="mid1-2x.png" />
+    <img src="mid2-2x.png" />
+    <img src="mid3-2x.png" />
+    <img src="mid4-2x.png" />
+    <img src="mid5-2x.png" />
+  </div>
+
+  <div class="parallax__layer parallax__layer--fg">
+    <img src="fore1-2x.png" />
+    <img src="fore2-2x.png" />
+    <img src="fore3-2x.png" />
+    <img src="fore4-2x.png" />
+    <img src="fore5-2x.png" />
+  </div>
+
+</div>
+
+<script src="../../bower_components/get-size/get-size.js"></script>
+<script src="../../bower_components/desandro-matches-selector/matches-selector.js"></script>
+<script src="../../bower_components/ev-emitter/ev-emitter.js"></script>
+<script src="../../bower_components/unipointer/unipointer.js"></script>
+<script src="../../bower_components/unidragger/unidragger.js"></script>
+<script src="../../bower_components/tap-listener/tap-listener.js"></script>
+<script src="../../bower_components/fizzy-ui-utils/utils.js"></script>
+
+<script src="../../js/cell.js"></script>
+<script src="../../js/slide.js"></script>
+<script src="../../js/animate.js"></script>
+<script src="../../js/flickity.js"></script>
+<script src="../../js/drag.js"></script>
+<script src="../../js/prev-next-button.js"></script>
+<script src="../../js/page-dots.js"></script>
+<script src="../../js/player.js"></script>
+<script src="../../js/add-remove-cell.js"></script>
+<script src="../../js/lazyload.js"></script>
+
+<script>
+
+// -----  ----- //
+
+var paraBG = document.querySelector('.parallax__layer--bg');
+var paraFG = document.querySelector('.parallax__layer--fg');
+
+var paraFlkty = new Flickity( '.parallax__carousel', {
+
+});
+
+var cellRatio = 1;
+var bgRatio = 0.75;
+var fgRatio = 2;
+
+paraFlkty.on( 'scroll', function( progress ) {
+  // console.log( progress );
+  paraBG.style.left = ( 0.5 - ( 0.5 + progress * 4 ) * cellRatio * bgRatio ) * 100 + '%';
+  paraFG.style.left = ( 0.5 - ( 0.5 + progress * 4 ) * cellRatio * fgRatio ) * 100 + '%';
+});
+
+paraFlkty.reposition();
+
+// -----  ----- //
+
+</script>
+
+</body>
+</html>
