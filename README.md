@@ -294,4 +294,12 @@ if (!Array.prototype.includes) {
   export {age as old, dog}
   ```
 
-### Module 14: ES6 Tooling git
+### Module 14: ES6 Tooling
+
+- Browser-sync. easy to set up a server. great for writing modules.
+- Babel compiles our newly-written es6 javascript into es5 so
+older browsers are able to understand the code.
+- Babel presets are a collection of plugins. (i.e. the ES2015 preset.)
+- polyfill.io to help use es6 features and have them supported on older browsers.
+
+### Module 15: Classes 
