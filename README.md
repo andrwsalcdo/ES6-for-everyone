@@ -324,3 +324,27 @@ static xyz() { }
 get xyz() { }
 set xyz() { }
 ```
+
+- Extending Classes: You must first create the thing you are extending before you add layering with the thing you want. Use `super()` to create the thing you are extending.
+- General rule don't extend deeper than 2 or 3.
+
+```javascript
+class Animal {  //this is the 1st class
+  constructor(name) {
+    //some properties
+  }
+  //more functions
+}
+class Dog extends Animal { //extending Animal.
+  constructor(name, breed) {
+    super(name); //this creates the Animal class before layering
+    this.breed = breed;
+    //more  
+  }
+  //more functions
+}
+```
+
+- You can use Spread & Rest to help with extending Arrays.
+
+### Module 16: Generators
