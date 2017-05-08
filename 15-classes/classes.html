@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+
+//class declaration
+class Dog {
+  //this method is required
+  constructor(name, breed) {
+    this.name = name;
+    this.breed = breed;
+  } // do not put a comma there! it will break!
+  bark() {
+    console.log(`Bark Bark! My name is ${this.name}`);
+  }
+  cuddle() {
+      console.log(`I love you owner!`);
+  }
+  //static method: a method that isn't inherited by all instances of the class.
+  //i.e. Sunny.staticMethod(); breaks. but, Dog.staticMethod(); works.
+  static info() {
+    console.log('A dog is better than a cat by 10 times');
+  }
+  //get
+  //get isn't a method. it's a property that's computed when you pull on it.
+  get description() {
+    return `${this.name} is a ${this.breed} type of dog`;
+  }
+  //set/setter
+  //snickers.nicknames -> undefined. why?
+  //you must put a "get" (right below). 
+  set nicknames(value) {
+    this.nick = value.trim();
+  }
+  get nicknames() {
+    return this.nick;
+  }
+}
+
+//class expression
+const Dog = class {
+
+}
+
+
+  const snickers = new Dog('Snickers', 'King Charles');
+  const sunny = new Dog('Sunny', 'Golden Doodle');
+
+</script>
+</body>
+</html>

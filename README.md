@@ -302,4 +302,25 @@ older browsers are able to understand the code.
 - Babel presets are a collection of plugins. (i.e. the ES2015 preset.)
 - polyfill.io to help use es6 features and have them supported on older browsers.
 
-### Module 15: Classes 
+### Module 15: Classes
+
+- Now, this is not a new way to do object-oriented inheritance. It's the exact same prototypal inheritance, it's just a new way to actually write them.
+- What is prototypal inheritance? Prototypal inheritance is when you put a method on the original constructor, here, it will be inherited by the rest of them.
+
+```javascript
+//declaration
+class Dog {
+  //this is required method
+  constructor() {
+
+  }
+}
+//expression
+const Dog = class {
+
+}
+//below: would go inside the class
+static xyz() { }
+get xyz() { }
+set xyz() { }
+```
