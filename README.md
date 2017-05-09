@@ -348,3 +348,18 @@ class Dog extends Animal { //extending Animal.
 - You can use Spread & Rest to help with extending Arrays.
 
 ### Module 16: Generators
+
+- a function that you can start & stop, you can pause for an indefinite amount of time, you can pass additional info to at a later point in time.
+- you put an `*` after `function`. new keyword `yield`.
+
+- use case: Waterfall-like Ajax requests.
+
+```javascript
+function* lyrics() {
+  yield `But don't tell my heart`;
+  yield `My achy breaky heart`;
+  yield `I just don't think he'd understand`
+}
+```
+
+### Module 17: Proxies 

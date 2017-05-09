@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+    function ajax(url) {
+      fetch(url).then(data => data.json()).then(data => dataGen.next(data))
+    }
+
+    function* steps() {
+        const beers = yield ajax('http://api.react.beer/v2/search?q=hops&type=beer');
+        const wes = yield ajax('https://api.github.com/users/');
+        const fatJoe = yield ajax('https://api.discogs.com/artists/51988');
+    }
+
+    const dataGen = steps();
+    dataGen.next(); //kick it off
+</script>
+</body>
+</html>
