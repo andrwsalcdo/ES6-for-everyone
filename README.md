@@ -362,4 +362,8 @@ function* lyrics() {
 }
 ```
 
-### Module 17: Proxies 
+### Module 17: Proxies
+
+- allow you to overwrite the default bevahior of an operation on an object.
+
+### Module 18: Sets 
