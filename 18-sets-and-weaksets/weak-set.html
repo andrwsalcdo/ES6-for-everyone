@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+let dog1 = { name: 'Snickers', age: 3 };
+let dog2 = { name: 'sunny', age: 1 };
+
+const weakSauce = new WeakSet([dog1, dog2]);
+
+console.log(weakSauce);
+dog1 = null;
+console.log(weakSauce);
+
+</script>
+</body>
+</html>

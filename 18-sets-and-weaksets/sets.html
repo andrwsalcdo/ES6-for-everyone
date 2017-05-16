@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>sets</title>
+</head>
+<body>
+<script>
+  const people = new Set();
+
+  people.add('wes');
+  people.add('snickers');
+  people.add('kait');
+
+//check how many items in a set.
+  //people.size -> 3.
+      // it's not index based. so,
+      //people.length = undefined!
+
+//remove an item
+  //people.delete('wes')
+
+//remove all items
+  //people.clear()
+
+
+  for (const person of people) {
+    console.log(person);
+  }
+  //can for loop over the set, because it's an iterator.
+
+  const students = new Set(['wes', 'kara', 'tony']);
+
+  //you can pass an existing array into a Set
+  const dogs = ['snickers', 'sunny'];
+  const dogSet = new Set(dogs);
+
+</script>
+</body>
+</html>

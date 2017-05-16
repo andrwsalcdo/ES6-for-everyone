@@ -366,4 +366,35 @@ function* lyrics() {
 
 - allow you to overwrite the default bevahior of an operation on an object.
 
-### Module 18: Sets 
+### Module 18: Sets and WeakSets
+
+- Set is like a unique array, meaning that you can only ever add the same item ONCE, with a nice API for managing the items inside of it.
+- Can't access the items individually.
+- It's not index based.
+- Think of: A list of items that you can add, remove or loop over.
+
+```javascript
+const people = new Set(['wes', 'tony', 'kara']);
+  people.add('ted');
+  people.size() //how many items
+  people.delete('ted')
+  people.clear() //removes all items in set
+  people.has('wes') //is value in the set
+//for of loop is possible, or you can use .next() with generators
+for (const person of people) {
+  console.log(person);
+}
+```
+- WeakSets are just like Sets, but there are a number of benefits in some situations. WeakSets can ONLY CONTAIN Objects {}.
+- Cannot enumerate or loop over WeakSets. There isn't an iterator.
+- There isn't a `.clear()` method.
+
+```javascript
+const weakSauce = new WeakSet([dog1, dog2]);
+
+console.log(weakSauce); //will show both objects
+dog1 = null; //no clear method, so this removes object. garbage collected.
+console.log(weakSauce); //displays only dog2.
+```
+
+### Module 19: Map and Weak Map 

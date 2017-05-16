@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  const brunch = new Set();
+  //as people start coming in
+  brunch.add('wes');
+  brunch.add('sara');
+  brunch.add('simon');
+
+  //ready to open!
+  const line = brunch.values();
+  console.log(line.next().value);
+  console.log(line.next().value);
+  brunch.add('heather');
+  brunch.add('snickers');
+  console.log(line.next().value);
+  console.log(line.next().value);
+  console.log(line.next().value);
+   
+</script>
+</body>
+</html>
