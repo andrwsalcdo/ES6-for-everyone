@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  let dog1 = { name: 'Snickers' };
+  let dog2 = { name: 'Sunny' };
+
+  const strong = new Map();
+  const weak = new WeakMap();
+
+  strong.set(dog1, 'Snickers is the best!');
+  weak.set(dog2, 'Sunny is the 2nd best!');
+
+  //deletes these values
+  dog1 = null;
+  dog2 = null;
+
+  //however, dog1 object is still holding on in Strong.
+  //it is deelted in weak. garbage collection has happened. 
+</script>
+</body>
+</html>

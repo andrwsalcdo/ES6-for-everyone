@@ -397,4 +397,9 @@ dog1 = null; //no clear method, so this removes object. garbage collected.
 console.log(weakSauce); //displays only dog2.
 ```
 
-### Module 19: Map and Weak Map 
+### Module 19: Map and Weak Map
+
+- sets is to Arrays, as Maps are to Objects.
+- you can use an object as a key in a Map.
+- good use case: storing metadata about an object.
+- weakMap similar to weakSet. not enumerable (cannot loop over it). good for garbage collection.
